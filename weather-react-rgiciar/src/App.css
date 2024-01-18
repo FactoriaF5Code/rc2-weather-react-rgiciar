@@ -17,12 +17,17 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
+  background: rgb(0,9,36);
+  background: linear-gradient(180deg, rgba(0,9,36,1) 10%, rgba(41,69,133,1) 100%);
 }
 
 :root {
   --black: #000;
   --white: #fff;
-  --myFont: Helvetica, Arial, sans-serif;
-  /*De esta forma creas variables y luego en css para llamar al color
-    sin necesidad de poner el codigo pones: var(--white)*/
+  --grey: #738290;
+  --yellow: #F2FF00;
+  --blue: #001040;
+  --violet: #A1B5D8;
+  --myFont: "Instrument Serif", serif;
 }
