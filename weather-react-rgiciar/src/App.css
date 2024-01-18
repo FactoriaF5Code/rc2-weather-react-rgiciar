@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: var(--myFont);
+  outline: none;
+  /*outline: red solid 1px;*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --myFont: Helvetica, Arial, sans-serif;
+  /*De esta forma creas variables y luego en css para llamar al color
+    sin necesidad de poner el codigo pones: var(--white)*/
+}
