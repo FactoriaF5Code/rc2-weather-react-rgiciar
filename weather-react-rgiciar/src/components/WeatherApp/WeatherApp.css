@@ -2,6 +2,7 @@ main {
     width: 400px;
     font-family: var(--myFont);
     color: white;
+    margin: 0 auto;
 }
 
 .buscador {
@@ -104,4 +105,11 @@ hr {
 
 p {
     margin: 0;
+}
+
+.forecast-days {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

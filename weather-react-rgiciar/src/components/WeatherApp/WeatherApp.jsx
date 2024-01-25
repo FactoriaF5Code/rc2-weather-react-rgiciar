@@ -1,7 +1,7 @@
+// WeatherApp.jsx
 import "./WeatherApp.css";
-
+import { PronosticoDias } from "./PronosticoDias";
 import { useState } from "react";
-
 import search_icon from "../../assets/search.svg";
 import clear_icon from "../../assets/clear.svg";
 import cloud_icon from "../../assets/cloud.svg";
@@ -15,6 +15,7 @@ export const WeatherApp = () => {
   let apiKey = "83492bb07531fba9717096bba091d440";
 
   const [wicon, setWicon] = useState(cloud_icon);
+  const [location, setLocation] = useState("London");
 
   const search = async () => {
     const element = document.getElementsByClassName("cityInput");
@@ -30,12 +31,12 @@ export const WeatherApp = () => {
     const humidity = document.getElementsByClassName("humidityPercent");
     const wind = document.getElementsByClassName("windRate");
     const temperature = document.getElementsByClassName("weatherTemp");
-    const location = document.getElementsByClassName("weatherLocation");
+    const locationElem = document.getElementsByClassName("weatherLocation"); // Cambia el nombre para evitar la confusión de nombres
 
     humidity[0].innerHTML = data.main.humidity + " %";
     wind[0].innerHTML = Math.floor(data.wind.speed) + " km/h";
     temperature[0].innerHTML = Math.floor(data.main.temp) + "ºC";
-    location[0].innerHTML = data.name;
+    locationElem[0].innerHTML = data.name;
 
     if (data.weather[0].icon === "01d" || data.weather[0].icon === "01n") {
       setWicon(clear_icon);
@@ -72,6 +73,8 @@ export const WeatherApp = () => {
     } else {
       setWicon(clear_icon);
     }
+
+    setLocation(element[0].value);
   };
 
   return (
@@ -83,20 +86,16 @@ export const WeatherApp = () => {
         </div>
       </div>
 
-
       <p>Ahora mismo en</p>
       <div className="weatherLocation">London</div>
       <hr />
-
 
       <div className="weatherImage">
         <img src={wicon} alt="" />
       </div>
       <div className="weatherTemp">15ºC</div>
 
-
       <section className="dataContainer">
-        
         <article className="humedad">
           <div className="data">
             <div className="humidityPercent">64%</div>            
@@ -116,8 +115,9 @@ export const WeatherApp = () => {
             <p>Viento</p>
           </div>
         </article>
-
       </section>
+
+      <PronosticoDias location={location} /> {/* Pasa la ubicación como prop */}
     </main>
   );
 };

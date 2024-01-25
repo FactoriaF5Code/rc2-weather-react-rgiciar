@@ -1,0 +1,29 @@
+.proximosDias {
+    font-family: var(--myFont);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.proximosDias h2 {
+    font-weight: 200;
+    margin-top: 50px;
+}
+
+.forecast-day {
+    width: 110px;
+    gap: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-days img {
+    width: auto;
+    height: 30px;
+}
